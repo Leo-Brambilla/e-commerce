@@ -63,9 +63,6 @@ public class UsuarioService {
         }
     }
     public Usuario salvar(UsuarioDTO dto) {
-        // Validar o DTO
-        // Se houver algum erro, lançar uma exceção de validação
-        // Caso contrário, prosseguir com a conversão e salvamento
         if (dto.getNome() == null || dto.getNome().isEmpty()) {
             throw new IllegalArgumentException("O nome é obrigatório.");
         }
@@ -77,11 +74,8 @@ public class UsuarioService {
         usuario.setNome(dto.getNome());
         usuario.setEmail(dto.getEmail());
 
-        // Outras atribuições necessárias
-
         return usuarioRepository.save(usuario);
     }
-
 
     public Usuario atualizar(Integer id, UsuarioDTO dto){
         Usuario usuarioAtual = this.getUsuario(id);
@@ -96,8 +90,6 @@ public class UsuarioService {
 
         return atualizado;
     }
-
-
 
     public void deletar(Integer id) {
         Usuario usuario = this.getUsuario(id);

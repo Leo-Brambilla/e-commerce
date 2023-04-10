@@ -32,7 +32,6 @@ public class UsuarioController {
         return usuarioService.buscarUsuarios(query, sortBy, sortDirection, page);
     }
 
-
     @GetMapping("/usuarios/{id}")
     public Usuario getUsuario(@PathVariable Integer id){
         return this.usuarioService.getUsuario(id);
