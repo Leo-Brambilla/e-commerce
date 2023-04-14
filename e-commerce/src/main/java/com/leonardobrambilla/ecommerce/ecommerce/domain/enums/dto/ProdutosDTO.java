@@ -9,6 +9,7 @@ public class ProdutosDTO {
     private String descricao;
     private BigDecimal valorVenda;
     private Integer quantidade;
+    private String img;
 
     public Integer getId() {
         return id;
@@ -48,5 +49,13 @@ public class ProdutosDTO {
 
     public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }

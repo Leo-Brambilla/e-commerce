@@ -16,8 +16,7 @@ public class Produtos {
     @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false, length = 1000
-    )
+    @Column(nullable = false, length = 1000)
     private String descricao;
 
     @Column(nullable = false)
@@ -26,13 +25,17 @@ public class Produtos {
     @Column(nullable = false)
     private Integer quantidade;
 
+    @Column(nullable = false, length = 1000)
+    private String img;
+
     public Produtos() {}
 
-    public Produtos(String nome, String descricao, BigDecimal valorVenda, Integer quantidade) {
+    public Produtos(String nome, String descricao, BigDecimal valorVenda, Integer quantidade, String img) {
         this.nome = nome;
         this.descricao = descricao;
         this.valorVenda = valorVenda;
         this.quantidade = quantidade;
+        this.img = img;
     }
 
     public Integer getId() {
@@ -73,6 +76,14 @@ public class Produtos {
 
     public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }
 
