@@ -2,6 +2,8 @@
 import './styles/global.css';
 import { Navbar } from './components/Navbar';
 import { Usuarios } from './views/Usuarios';
+import { Clientes } from './views/Clientes';
+
 
 function App() {
   return (
@@ -9,9 +11,11 @@ function App() {
       <div>
         <Navbar />
       </div>
-      <body>
+      <div className="flex flex-col">
         <Usuarios />
-      </body>
+        <Clientes />
+       
+      </div>
     </div>
   );
 }
