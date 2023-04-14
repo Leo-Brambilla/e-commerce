@@ -59,6 +59,7 @@ public class ProdutosService {
         produtos.setDescricao(dto.getDescricao());
         produtos.setValorVenda(dto.getValorVenda());
         produtos.setQuantidade(dto.getQuantidade());
+        produtos.setImg(dto.getImg());
         return produtos;
     }
 }
