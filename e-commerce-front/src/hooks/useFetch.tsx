@@ -6,15 +6,17 @@ export function useFetch<T = unknown>(url: string){
     const [error, setError] = useState<any | null>(null)
   
     useEffect(() => {
-        console.log(data)
-      axios.get(url)
-        .then(response => {
-          setData(response.data);  
-        })
-        .catch(error => {
-          setError(error);
-        });
-    }, [])
+        async function fetchData() {
+            try {
+                const response = await axios.get(url);
+                setData(response.data);
+            } catch (error) {
+                setError(error);
+            }
+        }
+
+        fetchData();
+    }, [url])
   
     return { data, error }
-  }
+}
