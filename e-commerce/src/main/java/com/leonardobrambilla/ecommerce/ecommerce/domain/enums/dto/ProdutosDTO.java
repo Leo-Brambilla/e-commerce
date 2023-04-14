@@ -4,12 +4,12 @@ package com.leonardobrambilla.ecommerce.ecommerce.domain.enums.dto;
 import java.math.BigDecimal;
 
 public class ProdutosDTO {
-    private Integer id;
-    private String nome;
-    private String descricao;
-    private BigDecimal valorVenda;
-    private Integer quantidade;
-    private String img;
+        private Integer id;
+        private String nome;
+        private String descricao;
+        private BigDecimal valorVenda;
+        private Integer quantidade;
+        private String img;
 
     public Integer getId() {
         return id;
