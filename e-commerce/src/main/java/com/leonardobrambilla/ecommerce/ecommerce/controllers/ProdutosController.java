@@ -22,16 +22,10 @@ public class ProdutosController {
     public ProdutosController(ProdutosService produtosService) {
         this.produtosService = produtosService;
     }
-
     @GetMapping("")
-    public Page<Produtos> listar(@RequestParam(required = false) String filter,
-                                 @RequestParam(required = false, defaultValue = "id") String sortBy,
-                                 @RequestParam(required = false, defaultValue = "asc") String sortDirection,
-                                 @RequestParam(defaultValue = "0") int page,
-                                 @RequestParam(defaultValue = "10") int size) {
-        return produtosService.listar(filter, page, size, sortBy, sortDirection);
+    public List<Produtos> findAll() {
+        return produtosRepository.findAll();
     }
-
 
     @GetMapping("/{id}")
     public Produtos getProduto(@PathVariable Integer id) {
